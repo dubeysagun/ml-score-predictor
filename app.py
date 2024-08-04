@@ -17,7 +17,15 @@ unsupervised_algorithms = st.sidebar.selectbox('Unsupervised Algorithms', [0, 1]
 semi_supervised_algorithms = st.sidebar.selectbox('Semi-Supervised Algorithms', [0, 1])
 reinforced_algorithm = st.sidebar.selectbox('Reinforced Algorithm', [0, 1])
 
-input_data = np.array([[libraries, statistics, basic_maths, supervised_algorithms, unsupervised_algorithms, semi_supervised_algorithms, reinforced_algorithm]])
+input_data = pd.DataFrame({
+    'Libraries': [libraries],
+    'Statistics': [statistics],
+    'Basic maths': [basic_maths],
+    'supervised algorithms': [supervised_algorithms],
+    'unsupervised algorithms': [unsupervised_algorithms],
+    'semi-supervised algorithms': [semi_supervised_algorithms],
+    'reinforced algorithm': [reinforced_algorithm]
+})
 
 prediction = model.predict(input_data)
 
